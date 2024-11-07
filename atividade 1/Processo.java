@@ -123,4 +123,12 @@ public class Processo {
             System.out.println("Erro ao carregar os dados do processo " + pid + ": Arquivo não encontrado.");
         }
     }
+
+    public String getEstado() {
+        return ep;
+    }
+
+    public boolean podeDesbloquear() {
+        return random.nextInt(100) < 30;    //30% de chance
+    } 
 }
