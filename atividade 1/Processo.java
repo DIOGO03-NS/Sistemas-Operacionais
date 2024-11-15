@@ -7,13 +7,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Processo {
-    private int pid;        
-    private int tp;     
-    private int cp;          
-    private String ep;       
-    private int nes;         
-    private int nCpu;         
-    private int tempoExecucao; 
+    private int pid;
+    private int tp;
+    private int cp;
+    private String ep;
+    private int nes;
+    private int nCpu;
+    private int tempoExecucao;
 
     private static final int QUANTUM = 1000;
     private Random random = new Random();
@@ -36,19 +36,19 @@ public class Processo {
     public void executarQuantum() {
         int ciclosExecutados = 0;
 
+        nCpu++; 
+
         while (ciclosExecutados < QUANTUM && tp < tempoExecucao) {
             atualizarContador();
             ciclosExecutados++;
 
             // Checa chance de 1% para operação de E/S
-            if (random.nextInt(100) < 1) { 
+            if (random.nextInt(100) < 1) {
                 nes++;
                 trocaDeContexto("Bloqueado");
                 return;
             }
         }
-
-        nCpu++;
 
         if (tp >= tempoExecucao) {
             finalizarProcesso();
@@ -135,6 +135,6 @@ public class Processo {
     }
 
     public boolean podeDesbloquear() {
-        return random.nextInt(100) < 30;    //30% de chance
-    } 
+        return random.nextInt(100) < 30; // 30% de chance
+    }
 }
