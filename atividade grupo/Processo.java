@@ -58,4 +58,8 @@ public class Processo {
                 ", tempoRetorno=" + tempoRetorno +
                 '}';
     }
+
+    public void setTempoExecucao(int i) {
+        this.tempoExecucao = i;
+    }
 }

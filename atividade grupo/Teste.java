@@ -30,6 +30,12 @@ public class Teste {
         escalonador3.executarPriorityScheduling(processos);
 
         System.out.println("------------------------------------------------");
-        
+
+        // Instanciar o escalonador e executar o Round Robin
+        RoundRobin escalonador4 = new RoundRobin(2);
+        escalonador4.executarRoundRobin(processos);
+
+        System.out.println("------------------------------------------------");
+
     }
 }
