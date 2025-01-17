@@ -37,5 +37,18 @@ public class Teste {
 
         System.out.println("------------------------------------------------");
 
+        // Instanciar o escalonador e executar o Priority com multiplas queues
+        PriorityMultipleSchedules escalonador5 = new PriorityMultipleSchedules();
+        escalonador5.executarPriorityMultipleQueues(processos);
+
+        System.out.println("------------------------------------------------");
+
+        // Instanciar o escalonador e executar o Lotery Scheduling
+        LoteryScheduling escalonador6 = new LoteryScheduling();
+        escalonador6.executarLottery(processos);
+
+        System.out.println("------------------------------------------------");
+
+
     }
 }
